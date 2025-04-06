@@ -23,9 +23,9 @@
         </div>
         <nav>
             <ul>
-                <li><a ><i class="fas fa-bars"></i></a></li>
-                <li><a ><i class="fas fa-search"></i></a></li>
-                <li><a ><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a href="https://cacaupromoshow.store/pascoa/loja#"><i class="fas fa-bars"></i></a></li>
+                <li><a href="https://cacaupromoshow.store/pascoa/loja#"><i class="fas fa-search"></i></a></li>
+                <li><a href="https://cacaupromoshow.store/pascoa/loja#"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -42,7 +42,15 @@
         <img src="images/banner2.jpg" alt="Banner 2">
         <img src="images/banner3.jpg" alt="Banner 3">
     </div>
+    <script>
+        // Função para obter os parâmetros da URL
+        function getURLParameters() {
+            const params = new URLSearchParams(window.location.search);
+            return params.toString() ? '?' + params.toString() : '';
+        }
 
+
+    </script>
     <!-- Produtos -->
     <section class="produtos">
         <!-- Produto 1 -->
@@ -56,7 +64,8 @@
             <div class="preco-desconto">R$ 87,90</div>
             <div class="parcelamento">até 6x no cartão s/ juros</div>
             <div class="estoque">Restam apenas 08 unidades</div>
-            <button onclick="window.location.href='https://pay.pagamentoseguroghostpay.com/checkout/fbf5f64b-a873-4104-85c1-a5eddd72b792';">Comprar</button>
+            <button onclick="const currentParams = getURLParameters();
+                window.location.href ='https://pay.pagamentoseguroghostpay.com/checkout/fbf5f64b-a873-4104-85c1-a5eddd72b792';">Comprar</button>
         </div>
 
         <!-- Produto 2 -->
