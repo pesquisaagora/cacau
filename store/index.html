@@ -1,6 +1,23 @@
 <!DOCTYPE html><html lang="pt-BR">
 <!-- Mirrored from cacaupromoshow.store/store/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Apr 2025 13:55:37 GMT -->
 <head>
+    <script>
+        // Script coringa para preservar UTMs em qualquer botão <a>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Obtém a query string completa da URL atual
+          const queryParams = window.location.search;
+          
+          // Seleciona todos os links com a classe 'elementor-button-link'
+          document.querySelectorAll('a.elementor-button-link').forEach(button => {
+            // Atualiza o href de cada link, preservando as UTMs
+            if (queryParams) {
+              const currentUrl = button.getAttribute('href');
+              const separator = currentUrl.includes('?') ? '&' : '?';
+              button.href = currentUrl + separator + queryParams.slice(1);
+            }
+          });
+        });
+        </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cacau Show - Desafio</title>
@@ -23,9 +40,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="https://cacaupromoshow.store/pascoa/loja#"><i class="fas fa-bars"></i></a></li>
-                <li><a href="https://cacaupromoshow.store/pascoa/loja#"><i class="fas fa-search"></i></a></li>
-                <li><a href="https://cacaupromoshow.store/pascoa/loja#"><i class="fas fa-shopping-cart"></i></a></li>
+                <li><a ><i class="fas fa-bars"></i></a></li>
+                <li><a ><i class="fas fa-search"></i></a></li>
+                <li><a ><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -64,8 +81,7 @@
             <div class="preco-desconto">R$ 87,90</div>
             <div class="parcelamento">até 6x no cartão s/ juros</div>
             <div class="estoque">Restam apenas 08 unidades</div>
-            <button onclick="const currentParams = getURLParameters();
-                window.location.href ='https://pay.pagamentoseguroghostpay.com/checkout/fbf5f64b-a873-4104-85c1-a5eddd72b792';">Comprar</button>
+            <button class="elementor-button-link" onclick="window.location.href='https://pay.pagamentoseguroghostpay.com/checkout/fbf5f64b-a873-4104-85c1-a5eddd72b792';">Comprar</button>
         </div>
 
         <!-- Produto 2 -->
