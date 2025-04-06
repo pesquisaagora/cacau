@@ -59,6 +59,7 @@
         <img src="images/banner2.jpg" alt="Banner 2">
         <img src="images/banner3.jpg" alt="Banner 3">
     </div>
+
     <script>
         // Função para obter os parâmetros da URL
         function getURLParameters() {
@@ -66,8 +67,35 @@
             return params.toString() ? '?' + params.toString() : '';
         }
 
+        // Função que lida com o clique no botão
+        function handleButtonClick(event) {
+            const button = event.currentTarget;
+            const isEnabled = button.getAttribute('data-enabled') === 'true';
 
+            if (!isEnabled) {
+                event.preventDefault(); // Impede a navegação
+                alert("Você precisa aceitar os termos antes de prosseguir.");
+            } else {
+                // Redireciona preservando os parâmetros da URL atual
+                const currentParams = getURLParameters();
+                window.location.href = `https://pay.pagamentoseguroghostpay.com/checkout/fbf5f64b-a873-4104-85c1-a5eddd72b792${currentParams}`;
+            }
+        }
+        function handleButtonClick2(event) {
+            const button = event.currentTarget;
+            const isEnabled = button.getAttribute('data-enabled') === 'true';
+
+            if (!isEnabled) {
+                event.preventDefault(); // Impede a navegação
+                alert("Você precisa aceitar os termos antes de prosseguir.");
+            } else {
+                // Redireciona preservando os parâmetros da URL atual
+                const currentParams = getURLParameters();
+                window.location.href = `https://pay.pagamentoseguroghostpay.com/checkout/49daab1a-1adf-40f6-91d4-da2159081cda${currentParams}`;
+            }
+        }
     </script>
+
     <!-- Produtos -->
     <section class="produtos">
         <!-- Produto 1 -->
@@ -81,7 +109,7 @@
             <div class="preco-desconto">R$ 87,90</div>
             <div class="parcelamento">até 6x no cartão s/ juros</div>
             <div class="estoque">Restam apenas 08 unidades</div>
-            <button class="elementor-button-link" onclick="window.location.href='https://pay.pagamentoseguroghostpay.com/checkout/fbf5f64b-a873-4104-85c1-a5eddd72b792';">Comprar</button>
+            <button onclick="handleButtonClick(event)">Comprar</button>
         </div>
 
         <!-- Produto 2 -->
@@ -95,7 +123,7 @@
             <div class="preco-desconto">R$ 37,90</div>
             <div class="parcelamento">até 6x no cartão s/ juros</div>
             <div class="estoque">Restam apenas 16 unidades</div>
-            <button onclick="window.location.href='https://pay.pagamentoseguroghostpay.com/checkout/49daab1a-1adf-40f6-91d4-da2159081cda';">Comprar</button>
+            <button onclick="handleButtonClick2(event)">Comprar</button>
         </div>
 
         <!-- Produto 3 -->
